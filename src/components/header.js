@@ -38,11 +38,17 @@ const Header = () => (
         margin-top: 0;
       `}
     >
-      <NavLink to="/" activeClassName="current-page">
-        Home
+      <NavLink to="/blog" activeClassName="current-page">
+        Blog
       </NavLink>
-      <NavLink to="/about" activeClassName="current-page">
-        About
+      <NavLink to="/projects" activeClassName="current-page">
+        Projects
+      </NavLink>
+      <NavLink to="/podcast" activeClassName="current-page">
+        Podcast
+      </NavLink>
+      <NavLink to="/contact" activeClassName="current-page">
+        Contact
       </NavLink>
     </nav>
   </header>

@@ -2,6 +2,14 @@ import React from "react"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import ReadLink from "./read-link"
+import styled from "@emotion/styled"
+
+const BlogLink = styled(Link)`
+  color: #222;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+`
 
 const PostPreview = ({ post }) => (
   <article
@@ -15,10 +23,10 @@ const PostPreview = ({ post }) => (
     `}
   >
     <h3>
-      <Link to={post.slug}>{post.title}</Link>
+      <BlogLink to={post.slug}>{post.title}</BlogLink>
     </h3>
     <p>{post.excerpt}</p>
-    <ReadLink to={post.slug}>Read This Post &rarr;</ReadLink>
+    <ReadLink to={post.slug}>CONTINUE READING &rarr;</ReadLink>
   </article>
 )
 

@@ -4,28 +4,24 @@ import PostPreview from "../components/post-preview"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import Hero from "../components/hero"
 
-import usePosts from "../hooks/use-posts"
-
-const IndexPage = () => {
-  const posts = usePosts()
-
-  return (
-    <>
-      <Hero />
-      <Layout>
-        <SEO title="Home" />
-        <h1>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <h2>Read my blog</h2>
-        {posts.map(post => (
-          <PostPreview key={post.slug} post={post} />
-        ))}
-      </Layout>
-    </>
-  )
-}
+const IndexPage = () => (
+  <Layout>
+    <SEO title="Home" />
+    <p>
+      I'm{" "}
+      <a href="http://cir.re/twitter" target="_blank">
+        @joshcirre
+      </a>
+      , a developer, teacher, and current Lambda School student with a passion
+      for creativity, design, and problem-solving.
+    </p>
+    <p>
+      I'm also a worship leader and founder of WorshipDev with a heart for
+      training others to develop better technical and creative web skills in a
+      church setting.
+    </p>
+  </Layout>
+)
 
 export default IndexPage

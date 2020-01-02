@@ -13,7 +13,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
 
   &.current-page {
-    border-bottom: 2px solid #222;
+    border-bottom: 2px solid #3ac191;
   }
 
   &:last-of-type {
@@ -24,15 +24,14 @@ const NavLink = styled(Link)`
 const Header = () => (
   <header
     css={css`
-      background: #eee;
-      border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
-      padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
+      padding: 0.5rem calc((100vw - 600px - 0.5rem) / 2);
+      margin-top: 20vh;
     `}
   >
     <NavLink to="/" fontWeight="bold">
-      Home
+      Josh Cirre
     </NavLink>
     <nav
       css={css`

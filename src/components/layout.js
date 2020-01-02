@@ -23,6 +23,7 @@ const Layout = ({ children }) => (
             Helvetica, Arial, sans-serif;
           font-size: 18px;
           line-height: 1.4;
+          background-color: #FCF8EC;
         }
 
         /* remove margin for the main div that Gatsby mounts into */
@@ -52,6 +53,11 @@ const Layout = ({ children }) => (
         li {
           margin-top: 0.25rem;
         }
+
+        a {
+          font-weight: bold;
+          color: #3AC191;
+        }
       `}
     />
     <Header />
@@ -59,7 +65,7 @@ const Layout = ({ children }) => (
       css={css`
         margin: 2rem auto 4rem;
         max-width: 90vw;
-        width: 550px;
+        width: 600px;
       `}
     >
       {children}

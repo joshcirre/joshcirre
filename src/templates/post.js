@@ -25,10 +25,10 @@ const PostTemplate = ({ data: { mdx: post } }) => (
         font-size: 0.75rem;
       `}
     >
-      Posted by (author)
+      Posted by {post.frontmatter.author}
     </p>
+    <p>---</p>
     <MDXRenderer>{post.body}</MDXRenderer>
-    <p>Post body goes here</p>
     <ReadLink to="/">&larr; back to all posts</ReadLink>
   </Layout>
 )

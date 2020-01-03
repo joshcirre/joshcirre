@@ -22,8 +22,7 @@ const Blog = () => {
           margin-top: 8rem;
         `}
       >
-        View the rest of my blog posts here or check out more free content at
-        WorshipDev.
+        Bear with me as I put more content together.
       </p>
     </Layout>
   )

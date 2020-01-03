@@ -4,6 +4,7 @@ import { css } from "@emotion/core"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import ReadLink from "../components/read-link"
+import SEO from "../components/seo"
 
 export const query = graphql`
   query($slug: String!) {
@@ -20,6 +21,7 @@ export const query = graphql`
 
 const PostTemplate = ({ data: { mdx: post } }) => (
   <Layout>
+    <SEO title={post.frontmatter.title} />
     <h1>{post.frontmatter.title}</h1>
     <p
       css={css`
@@ -32,7 +34,7 @@ const PostTemplate = ({ data: { mdx: post } }) => (
       {post.frontmatter.date}
     </p>
     <MDXRenderer>{post.body}</MDXRenderer>
-    <ReadLink to="/blog">&larr; back to all posts</ReadLink>
+    <ReadLink to="/blog">&larr; BACK TO ALL POSTS</ReadLink>
   </Layout>
 )
 

@@ -4,6 +4,7 @@ import PostPreview from "../components/post-preview"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Newsletter from "../components/newsletter"
 
 const IndexPage = () => (
   <Layout>
@@ -21,6 +22,11 @@ const IndexPage = () => (
       training others to develop better technical and creative web skills in a
       church setting.
     </p>
+    <p>
+      I write about what I'm learning, have a few side projects, and host a
+      podcast.
+    </p>
+    <Newsletter />
   </Layout>
 )
 

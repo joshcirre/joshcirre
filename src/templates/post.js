@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import ReadLink from "../components/read-link"
 import SEO from "../components/seo"
+import Newsletter from "../components/newsletter"
 
 export const query = graphql`
   query($slug: String!) {
@@ -35,6 +36,7 @@ const PostTemplate = ({ data: { mdx: post } }) => (
     </p>
     <MDXRenderer>{post.body}</MDXRenderer>
     <ReadLink to="/blog">&larr; BACK TO ALL POSTS</ReadLink>
+    <Newsletter />
   </Layout>
 )
 

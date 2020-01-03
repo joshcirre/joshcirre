@@ -8,7 +8,13 @@ const Contact = () => (
   <Layout>
     <SEO title="Contact Me" />
     <h1>I'm pretty easy to get a hold of.</h1>
-    <p>Welcome to page 2</p>
+    <br />
+    <p>
+      The easiest way to reach me is on{" "}
+      <a href="http://cir.re/twitter">Twitter</a>. If that's not your thing,
+      feel free to <a href="mailto: joshcirre@gmail.com">email me</a>. I try to
+      get back to everyone as quickly as possible.
+    </p>
   </Layout>
 )
 

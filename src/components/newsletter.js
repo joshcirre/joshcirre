@@ -23,6 +23,7 @@ const SubscribeButton = styled("input")`
   padding: 0.5rem 1rem;
   margin: 0.25rem 0;
   transition: 0.1s;
+  -webkit-appearance: none;
   &:hover {
     background: #3ac191;
     transition: 0.1s;

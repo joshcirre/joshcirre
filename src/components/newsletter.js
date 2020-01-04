@@ -16,7 +16,7 @@ const SummaryText = styled("p")`
 `
 
 const SubscribeButton = styled("input")`
-  background: #222;
+  background: #555;
   color: #fff;
   border: 0 none;
   cursor: pointer;
@@ -33,7 +33,7 @@ const Newsletter = () => (
   <form
     css={css`
       margin-top: 8rem;
-      border-top: 0.1rem #c4c4c4 solid;
+      border-top: 1px #ddd solid;
       padding-top: 2rem;
     `}
     action="https://tinyletter.com/joshcirre"

@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Newsletter from "../components/newsletter"
 
 const Contact = () => (
   <Layout>
@@ -15,6 +16,7 @@ const Contact = () => (
       feel free to <a href="mailto: joshcirre@gmail.com">email me</a>. I try to
       get back to everyone as quickly as possible.
     </p>
+    <Newsletter />
   </Layout>
 )
 

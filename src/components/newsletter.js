@@ -8,6 +8,10 @@ const EmailInput = styled("input")`
   padding: 0.5rem 1rem;
   margin: 0.25rem 0;
   box-sizing: border-box;
+  border-radius: 2;
+  @media (max-width: 666px) {
+    width: 60%;
+  }
 `
 
 const SummaryText = styled("p")`
@@ -24,6 +28,10 @@ const SubscribeButton = styled("input")`
   margin: 0.25rem 0;
   transition: 0.1s;
   -webkit-appearance: none;
+  border-radius: 2;
+  @media (max-width: 666px) {
+    width: 40%;
+  }
   &:hover {
     background: #3ac191;
     transition: 0.1s;

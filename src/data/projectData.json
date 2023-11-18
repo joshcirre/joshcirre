@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "title": "Jiffy",
+        "link": "https://learnwithjiffy.com/",
+        "logo": "/icons/jiffy_icon.png",
+        "shortExcerpt": "Send custom, personalized, Feeds of actionable information in seconds."
+    },
+    {
+        "id": "2",
+        "title": "Securequest",
+        "link": "https://www.securequest.io/",
+        "logo": "/icons/securequest_icon.png",
+        "shortExcerpt": "Automated security questionnaires completed for you."
+    },
+    {
+        "id": "3",
+        "title": "VidKit",
+        "link": "https://www.tryvidkit.com/",
+        "logo": "/icons/VidKitIcon.png",
+        "shortExcerpt": "A video creation service to compliment support documentation."
+    },
+    {
+        "id": "4",
+        "title": "SidekicAI",
+        "link": "https://www.sidekicai.com/",
+        "logo": "/icons/sidekic-logo.png",
+        "shortExcerpt": "A Chrome Extension to generate cover letters with AI."
+    }
+]

@@ -1,50 +1,80 @@
-# Blogster
+<div align="center">
+  <img alt="Astro Lane" src="/public/android-chrome-192x192.png" width="70" />
+</div>
 
-Theme: **bubblegum**
+<h1 align="center">
+  Astro Lane - An Astro Theme 🚀
+</h1>
 
-Blogster is a collection of beautiful, accessible and performant blog templates built with [Astro](https://astro.build) and [Markdoc](https://markdoc.dev).
+Astro Lane is a customizable blog theme for Astro, designed to provide a personalized touch to your site with ease. The theme offers minimal styling, making it easy for you to tailor it to your needs.
 
-Check out the demo here - [Blogster bubblegum template](https://blogster-bubblegum.netlify.app).
+<hr>
 
-## Bubblegum Template
+![Astro Lane Mockup](/public/images/astro-lane.png)
 
-A beautiful, performant and accessible theme built with [Tailwind](https://tailwindcss.com).
+## Key Features:
 
-- **Fast**. Fast by default. Astro websites are engineered to be fast and load before you could blink, even when not cached.
-- **Dark mode**. All themes have light/dark mode built-in.
-- **Mobile first**. Responsive and loads fast in all devices.
-- **Accessible**. A well thought out semantic and accessible content.
-- **Perfect lighthouse score.** 100 across the board.
-- **Easy content authoring**. Author content using markdown (`.md`) from your code editor or directly in GitHub.
-- **Extended markdown with [Markdoc](https://markdoc.dev).** Type-safe custom components like YouTube embed, Twitter embed (or anything you want really) in your markdown (`.md`) files.
-- **RSS feed**. Your blog has an RSS feed setup that can be accessed at `/rss.xml`.
-- **SEO**. All pages are setup with all the SEO you might need.
+-   Minimal styling (make it your own!)
+-   Accessible, semantic HTML markup
+-   Blazingly Fast
+-   100/100 Lighthouse performance
+-   Responsive & SEO-friendly with canonical URLs and OpenGraph data
+-   [Astro Image Integration](https://docs.astro.build/en/guides/integrations-guide/image/) for optimized images
+-   Sitemap support
+-   [Automatic RSS feed support](https://docs.astro.build/en/guides/rss)
+-   [Satori](https://github.com/vercel/satori) for creating open graph png images.
+-   Markdown & MDX support
+-   Draft Posts and Paginations
+-   Prism code syntax styling using Atom Dark theme.
 
-## How do I add content?
+## Lighthouse Score
 
-All the content is written in markdown (.md) and grouped as `blog` or `projects` in the `content` directory. All the default markdown syntax will work. You also have a few example custom markdown elements like _YouTube embed_, _Twitter embed_, etc. You can create your own custom components too in two easy steps.
+Astro Lane scores 100/100 in the Lighthouse performance audit.
 
-1. Add a markdoc config. Check out the markdoc config in [src/lib/markdoc/config.ts](src/lib/markdoc/config.ts) to learn how to add custom components.
-2. Add a component to render your custom component. Check out the Renderer in [src/components/Renderer.astro](src/components/Renderer.astro).
+![Astro Lane Lighthouse Score](/astro-lane-lighthouse-score.png)
 
-## How do I make it my blog?
+## Demo
 
-Easy.
+Check out the [Demo](https://astro-lane.chrstnl.com/), hosted on Vercel.
 
-- All content is static and everything is straight forward. Change whatever you need to change.
-- Delete or update the content in `content/{content-group}`. `content-group` could be `blog`, `projects` or `anything`.
-- (Optional) If you need more content types like _Notes_, just create a new dir in `content` and add a new frontmatter validator like [src/lib/markdoc/blog/frontmatter](src/lib/markdoc/blog/frontmatter).
+## Commands
 
-## How do I deploy?
+All commands are run from the root of the project, from a terminal:
 
-`yarn build` will generate a static website in `dist` dir. You can host it with any static hosting. If you need a recommendation, check out [Netlify](netlify.com).
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
 
-## Credit
+## Documentation
 
-Thanks to other templates that inspired this theme.
+-   [Configuration](https://astro-lane.chrstnl.com/blog/how-to-configure-astro-lane)
+-   Configuring [SITE Defaults](https://astro-lane.chrstnl.com/blog/how-to-configure-astro-lane#configuring-site-defaults)
+-   Configuring [Project Data](https://astro-lane.chrstnl.com/blog/how-to-configure-astro-lane#configuring-project-data)
+-   [Adding A New Post](https://astro-lane.chrstnl.com/blog/adding-new-post)
+-   [Markdown Guide](https://astro-lane.chrstnl.com/blog/markdown-style-guide)
+-   [Tailwind Typography Guide](https://astro-lane.chrstnl.com/blog/tailwind-typography)
 
-- [Official Astro Blog template](https://github.com/withastro/astro/tree/main/examples/blog)
+## Want to learn more?
 
-## License
+Check out [Astro's documentation](https://docs.astro.build).
 
-MIT © [Dinesh Pandiyan](https://github.com/flexdinesh)
+## Deploy
+
+You can deploy your own Astro site on various platforms by following the [Astro docs](https://docs.astro.build/en/guides/deploy/) guide. By default, the site will be built (see Commands section above) to a `/dist` directory.
+
+## Feedback and Suggestions
+
+If you have any suggestions/feedback, Feel free to open an issue if you find bugs or want to request new features.
+
+## Credit/Acknowledgements
+
+This theme functionality is loosely based on [Astro Paper](https://github.com/satnaing/astro-paper)
+
+---
+
+Made by [chrstnl](https://www.chrstnl.com/)

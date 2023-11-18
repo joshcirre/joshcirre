@@ -1,14 +1,207 @@
 ---
-import PageMeta from "../components/PageMeta.astro";
-import PageLayout from "../layouts/PageLayout.astro";
-import Intro from "../components/Intro.astro";
-import AboutTheTheme from "../components/AboutTheTheme.astro";
-import { SITE_TITLE } from "../config";
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import { Image } from "@astrojs/image/components";
+import projectData from "@/data/projectData.json";
+import CardGroup from "@/components/card/CardGroup.astro";
+import Card from "@/components/card/Card.astro";
+import CardBody from "@/components/card/CardBody.astro";
+import CardImage from "@/components/card/CardImage.astro";
+import CardHeader from "@/components/card/CardHeader.astro";
+import FormattedDate from "../../src/components/FormattedDate.astro";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon";
+import getSortedTags from "@/utils/getSortedTags";
+
+const posts = await getCollection("blog");
+
+const tags = getSortedTags(posts).slice(0, 6);
+const sortedPosts = posts
+    .filter((post) => post.data.featured == true)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .slice(0, 5);
 ---
 
-<PageLayout>
-  <PageMeta title={`${SITE_TITLE}`} slot="meta" />
-  <Fragment slot="main">
-    <Intro />
-  </Fragment>
-</PageLayout>
+<Layout
+    title="Josh Cirre - Helping people help people."
+    description="Founder, developer, learner, tinkerer, father, and husband."
+>
+    <div
+        class="main-wrapper wrap-sm grid gap-16 px-8 md:gap-24 lg:gap-32 mx-auto"
+    >
+        <SectionContainer class="hero--container flex flex-col gap-8 mt-32">
+            <Image
+                src="/images/Profile5.jpeg"
+                alt={"Photo by charlesdeluvio on Unsplash"}
+                width={160}
+                height={160}
+                aspectRatio={1 / 1}
+                format={"webp"}
+                class="rounded-full h-32 w-32 bg-neutral-100 object-cover p-4"
+            />
+            <div class="content-container">
+                <div class="page-title--content max-w-[54rem] mb-8 lg:mb-4">
+                    <h1
+                        class="text-4xl lg:text-3xl font-medium leading-8 lg:leading-10 tracking-tight lg:tracking-tighter mb-0"
+                    >
+                        Hi there, I'm Josh. 👋
+                    </h1>
+                </div>
+                <div
+                    class="content text-3xl md:text-3xl font-medium leading-8 lg:leading-10 tracking-tight lg:tracking-tighter text-neutral-500"
+                >
+                    I'm a founder, developer, learner, tinkerer, father, and
+                    husband based out of Phoenix, AZ 🌵. I want to <strong
+                        >enable people</strong
+                    > to build things that <strong>help other people</strong> better.
+                </div>
+                <div class="buttons-container mt-6 flex flex-wrap gap-2">
+                    <a
+                        href="https://youtube.com/@joshcirre"
+                        class="bg-[#363636] py-1 rounded-lg px-1 flex align-center flex-[0,0,auto] justify-center text-sm text-white-300 h-fit flex-row hover:bg-neutral-600 transition-colors duration-300"
+                        target="_blank"
+                        title="Subscribe on YouTube"
+                    >
+                        <svg
+                            viewBox="0 0 256 256"
+                            class="w-5 h-5 inline"
+                            astro-icon="ant-design:youtube-filled"
+                            ><path
+                                fill="currentColor"
+                                d="M248.5 64.1c-2.9-10.8-11.2-19.1-22-22C204.8 32 128 32 128 32s-76.8 0-98.5 10.1c-10.8 2.9-19.1 11.2-22 22C0 85.8 0 128 0 128s0 42.2 10.1 63.9c2.9 10.8 11.2 19.1 22 22C51.2 224 128 224 128 224s76.8 0 98.5-10.1c10.8-2.9 19.1-11.2 22-22C256 170.2 256 128 256 128s0-42.2-7.5-63.9zM104 168V88l64 40-64 40z"
+                            ></path></svg
+                        >
+                    </a><a
+                        href="https://x.com/joshcirre"
+                        class="bg-[#363636] py-1 rounded-lg px-1 flex align-center flex-[0,0,auto] justify-center text-sm text-white h-fit flex-row hover:bg-neutral-600 transition-colors duration-300"
+                        target="_blank"
+                        title="Follow me on X/Twitter"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="w-5 h-5 inline text-white"
+                            astro-icon="simple-icons:x"
+                        >
+                                <path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                    </svg>
+                    </a>
+                </div>
+            </div>
+        </SectionContainer>
+        <!-- Header/Hero Section -->
+        <SectionContainer class="projects--container">
+            <h2
+                class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter"
+            >
+                Things I'm working on
+            </h2>
+            <CardGroup
+                class="grid scroll-m-24 gap-5 grid-cols-1 md:grid-cols-2 w-full"
+            >
+                {
+                    projectData.map((project) => (
+                        <Card
+                            key={project.id}
+                            className="col-span-1"
+                            link={project.link}
+                            target="_blank"
+                        >
+                            <CardBody>
+                                <CardImage
+                                    src={project.logo}
+                                    alt="Alternative text for photo"
+                                    imageClass="absolute top-0 right-0 m-6 p-4 bg-white rounded-3xl"
+                                    width={80}
+                                    height={80}
+                                />
+                                <div class="card-content absolute bottom-8 left-6 right-6">
+                                    <CardHeader class="">
+                                        {project.title}
+                                    </CardHeader>
+                                    <div class="content break-words text-3xl font-medium leading-10 tracking-tight lg:tracking-tighter text-neutral-500 ">
+                                        <p>{project.shortExcerpt}</p>
+                                    </div>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    ))
+                }
+            </CardGroup>
+        </SectionContainer>
+        <!--  Projects Container -->
+        <SectionContainer class="blogs--container">
+            <div class="flex flex-row my-4 items-center text-neutral-500">
+                <h2 class="font-medium text-h4 mb-0 leading-8 tracking-tighter">
+                    Posts I've written
+                </h2>
+                <a href="/blog" class="font-medium flex no-underline ml-auto">
+                    View all posts
+                    <Icon name="ph:arrow-right-light" class="w-6 h-6 ml-4" />
+                </a>
+            </div>
+
+            <ul class="list-none space-y-5">
+                {
+                    sortedPosts.map((post) => (
+                        <li class="flex flex-col gap-1">
+                            <a
+                                href={`/blog/${post.slug}`}
+                                class="block w-full card-clip p-8 no-underline sm:flex-row sm:gap-8 bg-neutral-50 rounded-[40px] transition-all duration-300 hover:-top-0.5 relative"
+                            >
+                                <span class="grid flex-1 gap-1">
+                                    <span class="text-neutral-900 line-clamp-1 md:inline-flex items-center">
+                                        <span class="inline-block font-medium">
+                                            {post.data.title}
+                                        </span>
+                                        <span class="md:mb-0 my-2 md:my-0 md:ml-2 text-sm w-max md:w-auto items-center rounded-full border border-neutral-300 bg-white px-1 py-[2px] font-medium text-primary-500 block md:inline-flex">
+                                            <span class="px-2">
+                                                <FormattedDate
+                                                    date={post.data.pubDate}
+                                                />
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <span class="text-neutral-500 line-clamp-2 ">
+                                        {post.data.description}
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </SectionContainer>
+        <!-- Blog Container -->
+        <SectionContainer class="tags--container">
+            <div class="flex flex-row my-4 items-center text-neutral-500">
+                <h2
+                    class="font-medium text-h4 text-neutral-500 leading-8 tracking-tighter mb-0"
+                >
+                    Top Tags
+                </h2>
+
+                <a href="/tags" class="font-medium flex no-underline ml-auto">
+                    View all tags
+                    <Icon name="ph:arrow-right-light" class="w-6 h-6 ml-4" />
+                </a>
+            </div>
+
+            <ul class="list-none space-y-5">
+                {
+                    tags.map((tag) => (
+                        <li class={`inline-block my-3 mx-1 underline-offset-8`}>
+                            <a
+                                href={`/tags/${tag.toLowerCase()}`}
+                                class={`text-lg pr-2 flex flex-wrap items-center relative underline hover:-top-0.5 hover:text-skin-accent focus-visible:p-1`}
+                            >
+                                <Icon name="mdi:hashtag" class="w-6 h-6" />
+                                &nbsp;<span>{tag.toLowerCase()}</span>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </SectionContainer>
+        <!-- Tags Container -->
+    </div>
+</Layout>

@@ -1,116 +1,106 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.astro"],
-  darkMode: "class",
-  theme: {
-    extend: {
-      fontFamily: {
-        body: ["Space Grotesk", "sans-serif"],
-        heading: ["Space Grotesk", "sans-serif"],
-      },
-      colors: {
-        transparent: "transparent",
-        current: "currentColor",
-        primary: {
-          blue: "rgb(var(--color-primary-blue) / <alpha-value>)",
-          green: "rgb(var(--color-primary-green) / <alpha-value>)",
-          yellow: "rgb(var(--color-primary-yellow) / <alpha-value>)",
-        },
-        text: {
-          body: "rgb(var(--color-text-body) / <alpha-value>)",
-          bold: "rgb(var(--color-text-bold) / <alpha-value>)",
-          heading: "rgb(var(--color-text-heading) / <alpha-value>)",
-          muted: "rgb(var(--color-text-muted) / <alpha-value>)",
-          code: "rgb(var(--color-text-code) / <alpha-value>)",
-          link: "rgb(var(--color-text-link) / <alpha-value>)",
-          selection: "rgb(var(--color-text-selection) / <alpha-value>)",
-        },
-        bg: {
-          body: "rgb(var(--color-bg-body) / <alpha-value>)",
-          code: "rgb(var(--color-bg-code) / <alpha-value>)",
-          selection: "rgb(var(--color-bg-selection) / <alpha-value>)",
-        },
-        border: {
-          code: "rgb(var(--color-border-code) / <alpha-value>)",
-        },
-      },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            a: {
-              "text-decoration": "none",
-              "background-repeat": "no-repeat",
-              "background-size": "100% 1.5px",
-              "background-position": "0 100%",
-              "background-image":
-                "linear-gradient(to right, rgb(var(--color-text-link)/1), rgb(var(--color-text-link)/1))",
-              "&:hover": {
-                color: "rgb(var(--color-text-link))",
-              },
+    content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+    theme: {
+        extend: {
+            fontFamily: {
+                body: ["Inter", "Sans Serif"],
+                title: ["Inter", "Sans Serif"]
             },
-            "h1, h2, h3, h4, h5": {
-              color: "rgb(var(--color-text-heading))",
+            fontSize: {
+                body: [
+                    "1rem",
+                    {
+                        lineHeight: "1.5rem"
+                    }
+                ],
+                h1: [
+                    "3.5rem",
+                    {
+                        lineHeight: "3.75rem"
+                    }
+                ],
+                h2: [
+                    "2.25rem",
+                    {
+                        lineHeight: "2.625rem"
+                    }
+                ],
+                h3: [
+                    "1.875rem",
+                    {
+                        lineHeight: "2.25rem"
+                    }
+                ],
+                h4: [
+                    "1.5rem",
+                    {
+                        lineHeight: "2rem"
+                    }
+                ],
+                h5: [
+                    "1.25rem",
+                    {
+                        lineHeight: "1.75rem"
+                    }
+                ],
+                h6: [
+                    "1.125rem",
+                    {
+                        lineHeight: "1.5rem"
+                    }
+                ],
+                mini: [
+                    "0.75rem",
+                    {
+                        lineHeight: "1.5rem"
+                    }
+                ]
             },
-            "code::before": {
-              content: "none",
-            },
-            "code::after": {
-              content: "none",
-            },
-            blockquote: {
-              border: "none",
-              position: "relative",
-              width: "96%",
-              margin: "0 auto",
-              "font-size": "1.0625em",
-              "padding-top": "1.5rem",
-              "padding-bottom": "0.5rem",
-              "padding-left": "1.5rem",
-              "padding-right": "1.5rem",
-            },
-            "blockquote::before": {
-              "font-family": "Arial",
-              content: "'“'",
-              "font-size": "4em",
-              color: "rgb(var(--color-text-bold))",
-              position: "absolute",
-              left: "-10px",
-              top: "-10px",
-            },
-            "blockquote::after": {
-              content: "",
-            },
-            "blockquote p:first-of-type::before": {
-              content: "",
-            },
-            "blockquote p:last-of-type::after": {
-              content: "",
-            },
-          },
-        },
-        bubblegum: {
-          css: {
-            "--tw-prose-body": "rgb(var(--color-text-body))",
-            "--tw-prose-headings": "rgb(var(--color-text-heading))",
-            "--tw-prose-lead": "rgb(var(--color-text-body))",
-            "--tw-prose-links": "rgb(var(--color-text-body))",
-            "--tw-prose-bold": "rgb(var(--color-text-bold))",
-            "--tw-prose-counters": "rgb(var(--color-text-body))",
-            "--tw-prose-bullets": "rgb(var(--color-text-body))",
-            "--tw-prose-hr": "rgb(var(--color-text-muted))",
-            "--tw-prose-quotes": "rgb(var(--color-text-body))",
-            "--tw-prose-quote-borders": "rgb(var(--color-text-muted))",
-            "--tw-prose-captions": "rgb(var(--color-primary-heading))",
-            "--tw-prose-quote-captions": "rgb(var(--color-primary-heading))",
-            "--tw-prose-code": "rgb(var(--color-text-code))",
-            "--tw-prose-pre-code": "rgb(var(--color-text-code))",
-            "--tw-prose-pre-bg": "rgb(var(--color-bg-code))",
-            "--tw-prose-th-borders": "rgb(var(--color-text-muted))",
-            "--tw-prose-td-borders": "rgb(var(--color-text-muted))",
-          },
-        },
-      }),
+            colors: {
+                black: {
+                    DEFAULT: "#000000",
+                    50: "#E6E6E6",
+                    100: "#CCCCCC",
+                    200: "#999999",
+                    300: "#666666",
+                    400: "#333333",
+                    500: "#000000",
+                    600: "#000000",
+                    700: "#000000",
+                    800: "#000000",
+                    900: "#000000"
+                },
+                white: {
+                    DEFAULT: "#FFFFFF",
+                    50: "#FFFFFF",
+                    100: "#FCFCFC",
+                    200: "#FCFCFC",
+                    300: "#FAFAFA",
+                    400: "#FAFAFA",
+                    500: "#F7F7F7",
+                    600: "#C7C7C7",
+                    700: "#949494",
+                    800: "#636363",
+                    900: "#303030"
+                },
+                primary: {
+                    50: "#f7f7f7",
+                    100: "#e3e3e3",
+                    200: "#c8c8c8",
+                    300: "#a4a4a4",
+                    400: "#818181",
+                    500: "#737373",
+                    600: "#515151",
+                    700: "#434343",
+                    800: "#383838",
+                    900: "#313131",
+                    950: "#1a1a1a"
+                },
+                badge: "#F1F5F9",
+                badgeText: "#475569"
+            }
+        }
     },
-  },
-  plugins: [require("@tailwindcss/typography")],
+    plugins: [require("@tailwindcss/typography")]
 };

@@ -116,20 +116,26 @@ const stickers = [
         >
             {
                 stickers.map((sticker) => (
-                    <Card link={sticker.link} class="p-4">
-                        <Image
-                            src={sticker.image}
-                            alt={sticker.title}
-                            width={300}
-                            height={300}
-                            format="webp"
-                            fit="cover"
-                            quality={80}
-                            aspectRatio="1:1"
-                        />
+                    <Card link={sticker.link} class="p-4 relative">
+                        <span class="absolute top-4 left-4 bg-white px-2 py-1 rounded-full text-sm font-bold text-gray-800 shadow-md">
+                            {sticker.price}
+                        </span>
+                        <div class="aspect-square flex items-center justify-center">
+                            <Image
+                                src={sticker.image}
+                                alt={sticker.title}
+                                width={300}
+                                height={300}
+                                format="webp"
+                                fit="contain"
+                                quality={80}
+                                aspectRatio="1:1"
+                                class="w-full h-full object-contain"
+                            />
+                        </div>
                         <CardBody>
                             <CardHeader class="text-lg font-semibold mt-4 text-center">
-                                {sticker.price} - {sticker.title}
+                                {sticker.title}
                             </CardHeader>
                         </CardBody>
                     </Card>

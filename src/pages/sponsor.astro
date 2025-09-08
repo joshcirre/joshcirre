@@ -10,42 +10,52 @@ import { Icon } from "astro-icon";
 // Real stats from YouTube analytics
 const stats = {
     youtube: {
-        subscribers: "17.3K+",
-        totalViews: "1.18M",
-        watchHours: "80K+",
-        impressions: "12.9M"
+        subscriberGrowth: "+98.5%",
+        subscriberGrowth90d: "+8.6%",
+        viewsGrowth: "+87%",
+        watchHoursGrowth: "+124%",
+        impressionsGrowth: "+156%",
+        currentSubscribers: "17,334",
+        totalViews: "1.2M"
     },
     twitter: {
-        followers: "7K+",
+        followersGrowth: "+67%",
+        impressionsGrowth: "+92%",
+        engagementsGrowth: "+145%",
         impressions: "4.7M",
-        engagements: "165K+",
-        newFollows: "4K+",
+        engagements: "165K",
         timeframe: "last 365 days"
     },
     demographics: {
-        overTwentyFive: "76%",
-        audienceType: "PHP & Laravel developers who ship production code",
-        longFormViews: "566K+",
-        mediumFormViews: "500K+",
-        shortFormViews: "112K+",
-        avgDuration: "4:04"
+        experiencedDevs: "76%",
+        audienceType:
+            "Experienced PHP & Laravel developers who ship production code",
+        longFormViews: "566K",
+        mediumFormViews: "500K",
+        shortFormViews: "112K",
+        avgViewsPerVideo: "4,817"
     }
 };
 
 const growthMetrics = [
-    { metric: "YouTube Subscribers", growth: "+150%", period: "Last 12 months" },
-    { metric: "Monthly Views", growth: "+45%", period: "Last 90 days" },
-    { metric: "Watch Time", growth: "+200%", period: "Last 6 months" },
-    { metric: "Avg View Duration", growth: "+35%", period: "Last 90 days" }
+    {
+        metric: "YouTube Subscribers",
+        growth: "+98.5%",
+        period: "Last 12 months"
+    },
+    { metric: "Video Views", growth: "+87%", period: "Last 12 months" },
+    { metric: "Watch Time", growth: "+124%", period: "Last 12 months" },
+    { metric: "Twitter Engagement", growth: "+145%", period: "Last 12 months" }
 ];
-
 ---
 
 <Layout
     title="Josh Cirre - Sponsor"
     description="Partner with Josh Cirre to reach engaged developers and tech enthusiasts through authentic content and meaningful collaborations."
 >
-    <div class="main-wrapper wrap-sm grid gap-16 px-8 md:gap-24 lg:gap-32 mx-auto">
+    <div
+        class="main-wrapper wrap-sm grid gap-16 px-8 md:gap-24 lg:gap-32 mx-auto"
+    >
         <!-- Hero Section -->
         <SectionContainer class="hero--container flex flex-col gap-8 mt-32">
             <Image
@@ -59,12 +69,18 @@ const growthMetrics = [
             />
             <div class="content-container">
                 <div class="page-title--content max-w-[54rem] mb-8 lg:mb-4">
-                    <h1 class="text-4xl lg:text-3xl font-medium leading-8 lg:leading-10 tracking-tight lg:tracking-tighter mb-0">
+                    <h1
+                        class="text-4xl lg:text-3xl font-medium leading-8 lg:leading-10 tracking-tight lg:tracking-tighter mb-0"
+                    >
                         Sponsor Me
                     </h1>
                 </div>
-                <div class="content text-3xl md:text-3xl font-medium leading-8 lg:leading-10 tracking-tight lg:tracking-tighter text-neutral-500">
-                    Hi! I'm Josh. I create long-form PHP & Laravel tutorials. If you want to reach the growing PHP community beyond the typical JavaScript crowd, I'm your bridge.
+                <div
+                    class="content text-3xl md:text-3xl font-medium leading-8 lg:leading-10 tracking-tight lg:tracking-tighter text-neutral-500"
+                >
+                    Hi! I'm Josh. I create PHP & Laravel tutorials and content.
+                    If you want to reach the rapidly growing PHP community
+                    beyond the typical JavaScript crowd, I'm your bridge.
                 </div>
                 <div class="buttons-container mt-6 flex flex-wrap gap-2">
                     <a
@@ -73,8 +89,15 @@ const growthMetrics = [
                         target="_blank"
                         title="Subscribe on YouTube"
                     >
-                        <svg viewBox="0 0 256 256" class="w-5 h-5 inline" astro-icon="ant-design:youtube-filled">
-                            <path fill="currentColor" d="M248.5 64.1c-2.9-10.8-11.2-19.1-22-22C204.8 32 128 32 128 32s-76.8 0-98.5 10.1c-10.8 2.9-19.1 11.2-22 22C0 85.8 0 128 0 128s0 42.2 10.1 63.9c2.9 10.8 11.2 19.1 22 22C51.2 224 128 224 128 224s76.8 0 98.5-10.1c10.8-2.9 19.1-11.2 22-22C256 170.2 256 128 256 128s0-42.2-7.5-63.9zM104 168V88l64 40-64 40z"></path>
+                        <svg
+                            viewBox="0 0 256 256"
+                            class="w-5 h-5 inline"
+                            astro-icon="ant-design:youtube-filled"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M248.5 64.1c-2.9-10.8-11.2-19.1-22-22C204.8 32 128 32 128 32s-76.8 0-98.5 10.1c-10.8 2.9-19.1 11.2-22 22C0 85.8 0 128 0 128s0 42.2 10.1 63.9c2.9 10.8 11.2 19.1 22 22C51.2 224 128 224 128 224s76.8 0 98.5-10.1c10.8-2.9 19.1-11.2 22-22C256 170.2 256 128 256 128s0-42.2-7.5-63.9zM104 168V88l64 40-64 40z"
+                            ></path>
                         </svg>
                     </a>
                     <a
@@ -83,8 +106,16 @@ const growthMetrics = [
                         target="_blank"
                         title="Follow me on GitHub"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline text-white" viewBox="0 0 24 24" astro-icon="mdi:github">
-                            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.88 8.14 6.86 9.46.5.09.68-.22.68-.48v-1.68c-2.8.6-3.39-1.34-3.39-1.34-.46-1.16-1.12-1.47-1.12-1.47-.92-.63.07-.62.07-.62 1.02.07 1.56 1.05 1.56 1.05.9 1.54 2.36 1.1 2.93.84.09-.65.35-1.1.64-1.35-2.24-.25-4.6-1.12-4.6-4.96 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.03A9.6 9.6 0 0112 6.92c.85.01 1.7.11 2.5.33 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.41.1 2.66.64.69 1.03 1.6 1.03 2.7 0 3.85-2.36 4.7-4.6 4.95.36.31.68.92.68 1.86v2.76c0 .26.18.57.69.48C19.12 20.14 22 16.42 22 12c0-5.52-4.48-10-10-10z"></path>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-5 h-5 inline text-white"
+                            viewBox="0 0 24 24"
+                            astro-icon="mdi:github"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.88 8.14 6.86 9.46.5.09.68-.22.68-.48v-1.68c-2.8.6-3.39-1.34-3.39-1.34-.46-1.16-1.12-1.47-1.12-1.47-.92-.63.07-.62.07-.62 1.02.07 1.56 1.05 1.56 1.05.9 1.54 2.36 1.1 2.93.84.09-.65.35-1.1.64-1.35-2.24-.25-4.6-1.12-4.6-4.96 0-1.1.39-2 1.03-2.7-.1-.25-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.03A9.6 9.6 0 0112 6.92c.85.01 1.7.11 2.5.33 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.41.1 2.66.64.69 1.03 1.6 1.03 2.7 0 3.85-2.36 4.7-4.6 4.95.36.31.68.92.68 1.86v2.76c0 .26.18.57.69.48C19.12 20.14 22 16.42 22 12c0-5.52-4.48-10-10-10z"
+                            ></path>
                         </svg>
                     </a>
                     <a
@@ -93,8 +124,16 @@ const growthMetrics = [
                         target="_blank"
                         title="Follow me on Twitch"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline text-white" viewBox="0 0 24 24" astro-icon="mdi:twitch">
-                            <path fill="currentColor" d="M11.64 5.93h1.43v4.28h-1.43m3.93-4.28H17v4.28h-1.43M7 2L3.43 5.57v12.86h4.28V22l3.58-3.57h2.85L20.57 12V2m-1.43 9.29l-2.85 2.85h-2.86l-2.5 2.5v-2.5H7.71V3.43h11.43Z"></path>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-5 h-5 inline text-white"
+                            viewBox="0 0 24 24"
+                            astro-icon="mdi:twitch"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M11.64 5.93h1.43v4.28h-1.43m3.93-4.28H17v4.28h-1.43M7 2L3.43 5.57v12.86h4.28V22l3.58-3.57h2.85L20.57 12V2m-1.43 9.29l-2.85 2.85h-2.86l-2.5 2.5v-2.5H7.71V3.43h11.43Z"
+                            ></path>
                         </svg>
                     </a>
                     <a
@@ -103,40 +142,128 @@ const growthMetrics = [
                         target="_blank"
                         title="Follow me on X/Twitter"
                     >
-                        <svg viewBox="0 0 24 24" class="w-5 h-5 inline text-white" astro-icon="simple-icons:x">
-                            <path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path>
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="w-5 h-5 inline text-white"
+                            astro-icon="simple-icons:x"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                            ></path>
                         </svg>
                     </a>
                 </div>
             </div>
         </SectionContainer>
 
+        <!-- Growth Metrics - Moved Up -->
+        <SectionContainer class="growth--container">
+            <h2
+                class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8"
+            >
+                Rapid Channel Growth
+            </h2>
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+            >
+                {
+                    growthMetrics.map((item) => (
+                        <Card class="p-6 text-center">
+                            <CardBody>
+                                <div class="text-3xl font-bold text-green-600 mb-2">
+                                    {item.growth}
+                                </div>
+                                <CardHeader class="text-lg font-semibold mb-1">
+                                    {item.metric}
+                                </CardHeader>
+                                <p class="text-sm text-neutral-500">
+                                    {item.period}
+                                </p>
+                            </CardBody>
+                        </Card>
+                    ))
+                }
+            </div>
+        </SectionContainer>
+
+        <!-- Top Performing Videos -->
+        <SectionContainer class="videos--container">
+            <h2
+                class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8"
+            >
+                Proven Content That Converts
+            </h2>
+            <div
+                class="mb-8 overflow-hidden rounded-lg border border-neutral-200"
+            >
+                <img
+                    src="/images/topvideos.png"
+                    alt="Top performing YouTube videos showcasing Laravel and PHP content"
+                    class="w-full h-auto"
+                />
+            </div>
+
+            <div class="bg-neutral-50 rounded-3xl p-6 text-center">
+                <p class="text-lg text-neutral-700 mb-2">
+                    My tutorials consistently deliver high engagement across all
+                    formats.
+                </p>
+                <p class="text-neutral-600">
+                    Your sponsorship could be integrated into high-performing
+                    PHP & Laravel content tailored to your needs.
+                </p>
+            </div>
+        </SectionContainer>
+
         <!-- Stats Showcase -->
         <SectionContainer class="stats--container">
-            <h2 class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8">
-                The Numbers <span class="text-base font-normal">(Lifetime)</span>
+            <h2
+                class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8"
+            >
+                Platform Performance
             </h2>
             <div class="space-y-8">
                 <!-- YouTube Stats -->
                 <div class="bg-neutral-50 rounded-3xl p-8">
                     <div class="flex items-start gap-3 mb-6">
-                        <svg viewBox="0 0 256 256" class="w-8 h-8 text-red-600" astro-icon="ant-design:youtube-filled">
-                            <path fill="currentColor" d="M248.5 64.1c-2.9-10.8-11.2-19.1-22-22C204.8 32 128 32 128 32s-76.8 0-98.5 10.1c-10.8 2.9-19.1 11.2-22 22C0 85.8 0 128 0 128s0 42.2 10.1 63.9c2.9 10.8 11.2 19.1 22 22C51.2 224 128 224 128 224s76.8 0 98.5-10.1c10.8-2.9 19.1-11.2 22-22C256 170.2 256 128 256 128s0-42.2-7.5-63.9zM104 168V88l64 40-64 40z"></path>
+                        <svg
+                            viewBox="0 0 256 256"
+                            class="w-8 h-8 text-red-600"
+                            astro-icon="ant-design:youtube-filled"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M248.5 64.1c-2.9-10.8-11.2-19.1-22-22C204.8 32 128 32 128 32s-76.8 0-98.5 10.1c-10.8 2.9-19.1 11.2-22 22C0 85.8 0 128 0 128s0 42.2 10.1 63.9c2.9 10.8 11.2 19.1 22 22C51.2 224 128 224 128 224s76.8 0 98.5-10.1c10.8-2.9 19.1-11.2 22-22C256 170.2 256 128 256 128s0-42.2-7.5-63.9zM104 168V88l64 40-64 40z"
+                            ></path>
                         </svg>
                         <h3 class="text-2xl font-semibold">YouTube</h3>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
                         <div>
-                            <p class="text-neutral-500 text-sm">Subscribers</p>
-                            <p class="text-2xl font-bold">{stats.youtube.subscribers}</p>
+                            <p class="text-neutral-500 text-sm">
+                                Subscriber Growth
+                            </p>
+                            <p class="text-2xl font-bold text-green-600">
+                                {stats.youtube.subscriberGrowth}
+                            </p>
+                            <p class="text-sm text-neutral-500">12 months</p>
                         </div>
                         <div>
-                            <p class="text-neutral-500 text-sm">Total Views</p>
-                            <p class="text-2xl font-bold">{stats.youtube.totalViews}</p>
+                            <p class="text-neutral-500 text-sm">Views Growth</p>
+                            <p class="text-2xl font-bold text-green-600">
+                                {stats.youtube.viewsGrowth}
+                            </p>
+                            <p class="text-sm text-neutral-500">12 months</p>
                         </div>
                         <div>
-                            <p class="text-neutral-500 text-sm">Watch Hours</p>
-                            <p class="text-2xl font-bold text-green-600">{stats.youtube.watchHours}</p>
+                            <p class="text-neutral-500 text-sm">
+                                Current Reach
+                            </p>
+                            <p class="text-2xl font-bold">
+                                {stats.youtube.currentSubscribers}
+                            </p>
+                            <p class="text-sm text-neutral-500">subscribers</p>
                         </div>
                     </div>
                 </div>
@@ -144,26 +271,50 @@ const growthMetrics = [
                 <!-- Twitter Stats -->
                 <div class="bg-neutral-50 rounded-3xl p-8">
                     <div class="flex items-start gap-3 mb-6">
-                        <svg viewBox="0 0 24 24" class="w-8 h-8 text-black" astro-icon="simple-icons:x">
-                            <path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path>
+                        <svg
+                            viewBox="0 0 24 24"
+                            class="w-8 h-8 text-black"
+                            astro-icon="simple-icons:x"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                            ></path>
                         </svg>
                         <div>
                             <h3 class="text-2xl font-semibold">X/Twitter</h3>
-                            <span class="text-sm text-neutral-400">({stats.twitter.timeframe})</span>
+                            <span class="text-sm text-neutral-400"
+                                >({stats.twitter.timeframe})</span
+                            >
                         </div>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
                         <div>
-                            <p class="text-neutral-500 text-sm">Followers</p>
-                            <p class="text-2xl font-bold">{stats.twitter.followers}</p>
+                            <p class="text-neutral-500 text-sm">
+                                Follower Growth
+                            </p>
+                            <p class="text-2xl font-bold text-green-600">
+                                {stats.twitter.followersGrowth}
+                            </p>
+                            <p class="text-sm text-neutral-500">12 months</p>
                         </div>
                         <div>
-                            <p class="text-neutral-500 text-sm">Impressions</p>
-                            <p class="text-2xl font-bold">{stats.twitter.impressions}</p>
+                            <p class="text-neutral-500 text-sm">
+                                Impressions Growth
+                            </p>
+                            <p class="text-2xl font-bold text-green-600">
+                                {stats.twitter.impressionsGrowth}
+                            </p>
+                            <p class="text-sm text-neutral-500">12 months</p>
                         </div>
                         <div>
-                            <p class="text-neutral-500 text-sm">Engagements</p>
-                            <p class="text-2xl font-bold text-green-600">{stats.twitter.engagements}</p>
+                            <p class="text-neutral-500 text-sm">
+                                Total Impressions
+                            </p>
+                            <p class="text-2xl font-bold">
+                                {stats.twitter.impressions}
+                            </p>
+                            <p class="text-sm text-neutral-500">last year</p>
                         </div>
                     </div>
                 </div>
@@ -171,33 +322,88 @@ const growthMetrics = [
                 <!-- Demographics -->
                 <div class="bg-neutral-50 rounded-3xl p-8">
                     <div class="flex items-start gap-3 mb-6">
-                        <Icon name="mdi:account-group" class="w-8 h-8 text-blue-600" />
-                        <h3 class="text-2xl font-semibold">Audience Demographics</h3>
+                        <Icon
+                            name="mdi:account-group"
+                            class="w-8 h-8 text-blue-600"
+                        />
+                        <h3 class="text-2xl font-semibold">
+                            Audience Demographics
+                        </h3>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                            <p class="text-lg font-medium mb-4">My Audience Profile:</p>
+                            <p class="text-lg font-medium mb-4">
+                                My Audience Profile:
+                            </p>
                             <ul class="space-y-3">
-                                <li class="text-neutral-600">• <span class="font-bold">{stats.demographics.overTwentyFive}</span> are experienced developers (25+ years old)</li>
-                                <li class="text-neutral-600">• {stats.demographics.audienceType}</li>
-                                <li class="text-neutral-600">• <span class="font-medium">Key insight:</span> My viewers come from both PHP and JavaScript backgrounds, making me ideal for cross-ecosystem marketing</li>
+                                <li class="text-neutral-600">
+                                    • <span class="font-bold"
+                                        >{
+                                            stats.demographics.experiencedDevs
+                                        }</span
+                                    > are experienced developers
+                                </li>
+                                <li class="text-neutral-600">
+                                    • {stats.demographics.audienceType}
+                                </li>
+                                <li class="text-neutral-600">
+                                    • <span class="font-medium"
+                                        >Key insight:</span
+                                    > My viewers come from both PHP and JavaScript
+                                    backgrounds, making me ideal for cross-ecosystem
+                                    marketing
+                                </li>
                             </ul>
                         </div>
                         <div>
-                            <p class="text-lg font-medium mb-4">What My Audience Loves:</p>
+                            <p class="text-lg font-medium mb-4">
+                                Content Performance:
+                            </p>
                             <div class="space-y-3">
-                                <p class="text-neutral-600 font-medium">Long-form, in-depth tutorials perform best:</p>
+                                <p class="text-neutral-600 font-medium">
+                                    Diverse content types drive engagement:
+                                </p>
                                 <ul class="space-y-2 ml-4">
-                                    <li class="flex items-center justify-between">
-                                        <span class="text-neutral-600">• Long tutorials (15+ min)</span>
-                                        <span class="font-bold text-green-600">{stats.demographics.longFormViews} views</span>
+                                    <li
+                                        class="flex items-center justify-between"
+                                    >
+                                        <span class="text-neutral-600"
+                                            >• Deep-dive tutorials</span
+                                        >
+                                        <span class="font-bold text-green-600"
+                                            >{stats.demographics.longFormViews} views</span
+                                        >
                                     </li>
-                                    <li class="flex items-center justify-between">
-                                        <span class="text-neutral-600">• Medium tutorials (5-15 min)</span>
-                                        <span class="font-bold">{stats.demographics.mediumFormViews} views</span>
+                                    <li
+                                        class="flex items-center justify-between"
+                                    >
+                                        <span class="text-neutral-600"
+                                            >• Quick tips & features</span
+                                        >
+                                        <span class="font-bold"
+                                            >{
+                                                stats.demographics
+                                                    .mediumFormViews
+                                            } views</span
+                                        >
+                                    </li>
+                                    <li
+                                        class="flex items-center justify-between"
+                                    >
+                                        <span class="text-neutral-600"
+                                            >• Code snippets</span
+                                        >
+                                        <span class="font-bold"
+                                            >{stats.demographics.shortFormViews}
+                                            views</span
+                                        >
                                     </li>
                                 </ul>
-                                <p class="text-sm text-neutral-600 italic mt-3">Long-form videos (45+ min) average 5-10 minutes of engaged watch time</p>
+                                <p class="text-sm text-neutral-600 italic mt-3">
+                                    Average views per video: {
+                                        stats.demographics.avgViewsPerVideo
+                                    }
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -207,204 +413,295 @@ const growthMetrics = [
 
         <!-- Why Sponsor Josh -->
         <SectionContainer class="introduction--container">
-            <h2 class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8">
+            <h2
+                class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8"
+            >
                 Why Sponsor Me?
             </h2>
             <div class="space-y-6">
                 <p class="text-xl text-neutral-700 leading-relaxed">
-                    PHP and Laravel developers watch my long-form tutorials (45-90 minutes) to master new technologies. Having transitioned from the JavaScript ecosystem myself, I uniquely understand both worlds - making me the perfect partner to help your company reach the PHP community.
+                    PHP and Laravel developers watch my tutorials to master new
+                    technologies. Having transitioned from the JavaScript
+                    ecosystem myself, I uniquely understand both worlds - making
+                    me the perfect partner to help your company reach the PHP
+                    community.
                 </p>
-                
+
                 <!-- Real Subscriber Comments -->
-                <h3 class="text-lg font-semibold text-neutral-800 mb-4">What Viewers Say About My Tutorials</h3>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-4">
+                    What Viewers Say About My Tutorials
+                </h3>
                 <div class="space-y-4 mb-8">
-                    <div class="overflow-hidden rounded-lg border border-neutral-200">
-                        <img src="/images/jstolaravrelcomment.png" alt="Love your niche of guiding JS developers into Laravel!" class="w-full h-auto" />
+                    <div
+                        class="overflow-hidden rounded-lg border border-neutral-200"
+                    >
+                        <img
+                            src="/images/jstolaravrelcomment.png"
+                            alt="Love your niche of guiding JS developers into Laravel!"
+                            class="w-full h-auto"
+                        />
                     </div>
-                    <div class="overflow-hidden rounded-lg border border-neutral-200">
-                        <img src="/images/comment1.png" alt="Subscriber comment about teaching quality" class="w-full h-auto" />
+                    <div
+                        class="overflow-hidden rounded-lg border border-neutral-200"
+                    >
+                        <img
+                            src="/images/comment1.png"
+                            alt="Subscriber comment about teaching quality"
+                            class="w-full h-auto"
+                        />
                     </div>
-                    <div class="overflow-hidden rounded-lg border border-neutral-200">
-                        <img src="/images/comment2.png" alt="Subscriber comment about course quality" class="w-full h-auto" />
+                    <div
+                        class="overflow-hidden rounded-lg border border-neutral-200"
+                    >
+                        <img
+                            src="/images/comment2.png"
+                            alt="Subscriber comment about course quality"
+                            class="w-full h-auto"
+                        />
                     </div>
-                    <div class="overflow-hidden rounded-lg border border-neutral-200">
-                        <img src="/images/comment3.png" alt="Subscriber thanking for Laravel resources" class="w-full h-auto" />
+                    <div
+                        class="overflow-hidden rounded-lg border border-neutral-200"
+                    >
+                        <img
+                            src="/images/comment3.png"
+                            alt="Subscriber thanking for Laravel resources"
+                            class="w-full h-auto"
+                        />
                     </div>
                 </div>
-                
+
                 <!-- Ad Comments -->
-                <h3 class="text-lg font-semibold text-neutral-800 mb-4">Viewers Actually Love the Sponsored Content</h3>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-4">
+                    Viewers Actually Love the Sponsored Content
+                </h3>
                 <div class="space-y-4 mb-8">
-                    <div class="overflow-hidden rounded-lg border border-neutral-200">
-                        <img src="/images/adcomment.png" alt="The ad part was seriously hilarious, and I loved it" class="w-full h-auto" />
+                    <div
+                        class="overflow-hidden rounded-lg border border-neutral-200"
+                    >
+                        <img
+                            src="/images/adcomment.png"
+                            alt="The ad part was seriously hilarious, and I loved it"
+                            class="w-full h-auto"
+                        />
                     </div>
-                    <div class="overflow-hidden rounded-lg border border-neutral-200">
-                        <img src="/images/adcomment2.png" alt="That bento ad - laughing emojis" class="w-full h-auto" />
+                    <div
+                        class="overflow-hidden rounded-lg border border-neutral-200"
+                    >
+                        <img
+                            src="/images/adcomment2.png"
+                            alt="That bento ad - laughing emojis"
+                            class="w-full h-auto"
+                        />
                     </div>
                 </div>
                 <div class="mt-8 space-y-8">
                     <div class="bg-neutral-50 rounded-3xl p-8">
-                        <h3 class="text-2xl font-semibold text-neutral-800 mb-4">Why I'm Different</h3>
-                        <p class="text-lg text-neutral-600 leading-relaxed mb-4">
-                            My most successful videos are <strong>long-form tutorials (45-90 minutes)</strong> that dive deep into real-world implementations. The Livewire Crash Course alone has generated thousands of engaged views with viewers staying for the entire duration.
+                        <h3
+                            class="text-2xl font-semibold text-neutral-800 mb-4"
+                        >
+                            Why I'm Different
+                        </h3>
+                        <p
+                            class="text-lg text-neutral-600 leading-relaxed mb-4"
+                        >
+                            I create <strong>diverse content types</strong> from
+                            quick tips to comprehensive tutorials. My Livewire Crash
+                            Course has generated over 60,000 engaged views, while
+                            shorter videos consistently reach thousands of developers.
                         </p>
-                        <p class="text-lg text-neutral-600 leading-relaxed mb-4">
-                            <strong>The PHP & Laravel communities are growing rapidly.</strong> If you want to get your developer tools, SDKs, or services in front of this underserved but highly engaged audience, I'm the perfect bridge - having come from JavaScript myself.
+                        <p
+                            class="text-lg text-neutral-600 leading-relaxed mb-4"
+                        >
+                            <strong
+                                >The PHP & Laravel communities are growing
+                                rapidly.</strong
+                            > If you want to get your developer tools, SDKs, or services
+                            in front of this underserved but highly engaged audience,
+                            I'm the perfect bridge - having come from JavaScript
+                            myself.
                         </p>
-                        <p class="text-lg text-neutral-600 leading-relaxed mb-4">
-                            Unlike channels focused solely on JavaScript, I bring a unique perspective: I understand both ecosystems. This means I can help JavaScript-focused companies expand into the PHP/Laravel market with authentic, knowledgeable content.
+                        <p
+                            class="text-lg text-neutral-600 leading-relaxed mb-4"
+                        >
+                            Unlike channels focused solely on JavaScript, I
+                            bring a unique perspective: I understand both
+                            ecosystems. This means I can help JavaScript-focused
+                            companies expand into the PHP/Laravel market with
+                            authentic, knowledgeable content.
                         </p>
                         <p class="text-lg text-neutral-600 leading-relaxed">
-                            My audience consists of experienced developers (76% over 25) who are actively building and shipping production applications. They trust my recommendations because I use and understand the tools I showcase.
+                            My audience consists of experienced developers who
+                            are actively building and shipping production
+                            applications. They trust my recommendations because
+                            I use and understand the tools I showcase.
                         </p>
                     </div>
                 </div>
             </div>
         </SectionContainer>
 
-        <!-- Top Performing Videos -->
-        <SectionContainer class="videos--container">
-            <h2 class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8">
-                Proven Long-Form Content That Converts
-            </h2>
-            <div class="mb-8 overflow-hidden rounded-lg border border-neutral-200">
-                <img src="/images/topvideos.png" alt="Top performing YouTube videos showcasing long-form Laravel and PHP content" class="w-full h-auto" />
-            </div>
-            
-            <div class="bg-neutral-50 rounded-3xl p-6 text-center">
-                <p class="text-lg text-neutral-700 mb-2">
-                    Long-form tutorials consistently perform well.
-                </p>
-                <p class="text-neutral-600">
-                    Your sponsorship could be integrated into similar high-performing PHP & Laravel content.
-                </p>
-            </div>
-        </SectionContainer>
-
-        <!-- Growth Metrics -->
-        <SectionContainer class="growth--container">
-            <h2 class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8">
-                Recent Growth Trends
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {growthMetrics.map(item => (
-                    <Card class="p-6 text-center">
-                        <CardBody>
-                            <div class="text-3xl font-bold text-green-600 mb-2">{item.growth}</div>
-                            <CardHeader class="text-lg font-semibold mb-1">{item.metric}</CardHeader>
-                            <p class="text-sm text-neutral-500">{item.period}</p>
-                        </CardBody>
-                    </Card>
-                ))}
-            </div>
-        </SectionContainer>
-
-
         <!-- Sponsorship Options -->
         <SectionContainer class="sponsorship-options--container">
-            <h2 class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8">
+            <h2
+                class="font-medium text-h4 text-neutral-500 my-4 leading-8 tracking-tighter mb-8"
+            >
                 Partnership Opportunities
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <Card class="p-6">
                     <CardBody>
-                        <CardHeader class="text-xl font-semibold mb-4">Full-Featured Tutorial Videos</CardHeader>
+                        <CardHeader class="text-xl font-semibold mb-4">
+                            Full-Featured Tutorial Videos
+                        </CardHeader>
                         <p class="text-neutral-600 mb-3">
-                            The most impactful option. I create a complete tutorial using your product/service as the foundation. These videos consistently perform best and provide authentic value.
+                            The most impactful option. I create a complete
+                            tutorial using your product/service as the
+                            foundation. These videos consistently perform best
+                            and provide authentic value.
                         </p>
                         <ul class="space-y-2 text-sm text-neutral-600">
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>45-90 minute deep dives</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Natural product integration</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Highest engagement & conversion</span>
                             </li>
                         </ul>
                     </CardBody>
                 </Card>
-                
+
                 <Card class="p-6">
                     <CardBody>
-                        <CardHeader class="text-xl font-semibold mb-4">Monthly Sponsorships</CardHeader>
+                        <CardHeader class="text-xl font-semibold mb-4">
+                            Monthly Sponsorships
+                        </CardHeader>
                         <p class="text-neutral-600 mb-3">
-                            Consistent brand presence across all my content. Perfect for companies wanting to build long-term awareness in the PHP/Laravel community.
+                            Consistent brand presence across all my content.
+                            Perfect for companies wanting to build long-term
+                            awareness in the PHP/Laravel community.
                         </p>
                         <ul class="space-y-2 text-sm text-neutral-600">
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Ad slot in every video</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Build brand recognition</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Flexible messaging</span>
                             </li>
                         </ul>
                     </CardBody>
                 </Card>
-                
+
                 <Card class="p-6">
                     <CardBody>
-                        <CardHeader class="text-xl font-semibold mb-4">One-Off Ad Slots</CardHeader>
+                        <CardHeader class="text-xl font-semibold mb-4">
+                            One-Off Ad Slots
+                        </CardHeader>
                         <p class="text-neutral-600 mb-3">
-                            Test the waters with a single video sponsorship. Great for product launches or time-sensitive campaigns.
+                            Test the waters with a single video sponsorship.
+                            Great for product launches or time-sensitive
+                            campaigns.
                         </p>
                         <ul class="space-y-2 text-sm text-neutral-600">
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>60-120 second segments</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Custom creative approach</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Quick turnaround</span>
                             </li>
                         </ul>
                     </CardBody>
                 </Card>
-                
+
                 <Card class="p-6">
                     <CardBody>
-                        <CardHeader class="text-xl font-semibold mb-4">Visual/Text Sponsorships</CardHeader>
+                        <CardHeader class="text-xl font-semibold mb-4">
+                            Visual/Text Sponsorships
+                        </CardHeader>
                         <p class="text-neutral-600 mb-3">
-                            More accessible option for smaller budgets. Still reaches my engaged audience without full video integration.
+                            More accessible option for smaller budgets. Still
+                            reaches my engaged audience without full video
+                            integration.
                         </p>
                         <ul class="space-y-2 text-sm text-neutral-600">
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Video description placement</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Pinned comments</span>
                             </li>
                             <li class="flex items-start gap-2">
-                                <Icon name="mdi:check" class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <Icon
+                                    name="mdi:check"
+                                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                                />
                                 <span>Community posts</span>
                             </li>
                         </ul>
                     </CardBody>
                 </Card>
             </div>
-            
+
             <div class="bg-neutral-50 rounded-3xl p-8 text-center">
                 <p class="text-lg text-neutral-700 mb-2">
-                    Have something else in mind? I'm open to creative partnerships.
+                    Have something else in mind? I'm open to creative
+                    partnerships.
                 </p>
                 <p class="text-neutral-600">
-                    Let's discuss how we can make your sponsorship work for both your goals and my audience.
+                    Let's discuss how we can make your sponsorship work for both
+                    your goals and my audience.
                 </p>
             </div>
         </SectionContainer>
@@ -413,22 +710,38 @@ const growthMetrics = [
         <SectionContainer class="cta--container">
             <div class="text-center space-y-6">
                 <p class="text-2xl text-neutral-700 font-medium">
-                    I've helped developers discover amazing tools.<br />Will yours be next?
+                    I've helped developers discover amazing tools.<br />Will
+                    yours be next?
                 </p>
                 <p class="text-xl text-neutral-600">
-                    Email me at <a href="mailto:youtube@joshcirre.com" class="text-blue-600 hover:text-blue-800 transition-colors font-medium">youtube@joshcirre.com</a> to discuss how we can work together
+                    Email me at <a
+                        href="mailto:youtube@joshcirre.com"
+                        class="text-blue-600 hover:text-blue-800 transition-colors font-medium"
+                        >youtube@joshcirre.com</a
+                    > to discuss how we can work together
                 </p>
             </div>
         </SectionContainer>
 
         <!-- Footer Links -->
         <SectionContainer class="footer--container pb-12">
-            <div class="flex justify-center items-center gap-6 text-neutral-500">
-                <a href="https://github.com/joshcirre" class="hover:text-neutral-700 transition-colors">GitHub</a>
+            <div
+                class="flex justify-center items-center gap-6 text-neutral-500"
+            >
+                <a
+                    href="https://github.com/joshcirre"
+                    class="hover:text-neutral-700 transition-colors">GitHub</a
+                >
                 <span>•</span>
-                <a href="https://x.com/joshcirre" class="hover:text-neutral-700 transition-colors">Twitter</a>
+                <a
+                    href="https://x.com/joshcirre"
+                    class="hover:text-neutral-700 transition-colors">Twitter</a
+                >
                 <span>•</span>
-                <a href="https://twitch.tv/joshcirre" class="hover:text-neutral-700 transition-colors">Twitch</a>
+                <a
+                    href="https://twitch.tv/joshcirre"
+                    class="hover:text-neutral-700 transition-colors">Twitch</a
+                >
             </div>
         </SectionContainer>
     </div>
